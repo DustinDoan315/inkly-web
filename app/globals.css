@@ -1,6 +1,4 @@
 @import "../node_modules/tailwindcss/index.css";
-@import "../node_modules/tw-animate-css/dist/tw-animate.css";
-@import "../node_modules/shadcn/dist/tailwind.css";
 
 @theme inline { --font-sans: var(--font-sans); --font-serif: var(--font-serif); }
 
