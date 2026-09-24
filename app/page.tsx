@@ -10,6 +10,8 @@ import {
 import Image from 'next/image';
 import Link from 'next/link';
 
+const APP_STORE_URL = 'https://apps.apple.com/us/app/inkly-daily-vibes/id6760991001';
+
 const steps = [
   {
     icon: Camera,
@@ -133,10 +135,10 @@ export default function Home() {
           </a>
         </nav>
         <a
-          className="rounded-full border border-fuchsia-200/30 bg-[#b95add] px-4 py-2 text-sm font-semibold text-[#21062f] transition hover:bg-[#cf80ec]"
-          href="mailto:support@inkly.app?subject=Inkly%20early%20access"
+          className="shrink-0 rounded-full border border-fuchsia-200/30 bg-[#b95add] px-3 py-2 text-xs font-semibold text-[#21062f] transition hover:bg-[#cf80ec] sm:px-4 sm:text-sm"
+          href={APP_STORE_URL}
         >
-          Get early access
+          Download on the App Store
         </a>
       </header>
 
@@ -144,7 +146,7 @@ export default function Home() {
         <div className="absolute -left-32 top-8 -z-10 size-[30rem] rounded-full bg-[#8d4de8]/25 blur-[110px]" />
         <div>
           <p className="mb-5 flex items-center gap-2 text-xs font-semibold uppercase tracking-[.18em] text-fuchsia-200">
-            <span className="size-1.5 rounded-full bg-[#be55cc]" /> Inkly: Quote
+            <span className="size-1.5 rounded-full bg-[#be55cc]" /> Inkly: Daily
             Vibes
           </p>
           <h1 className="max-w-xl font-serif text-5xl leading-[.98] tracking-[-.055em] text-white sm:text-6xl lg:text-7xl">
@@ -157,9 +159,9 @@ export default function Home() {
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <a
               className="inline-flex items-center gap-2 rounded-full bg-[#b95add] px-5 py-3 text-sm font-semibold text-[#21062f] transition hover:bg-[#cf80ec]"
-              href="mailto:support@inkly.app?subject=Inkly%20early%20access"
+              href={APP_STORE_URL}
             >
-              Join the waitlist <ArrowRight className="size-4" />
+              Download on the App Store <ArrowRight className="size-4" />
             </a>
             <a
               className="inline-flex items-center gap-2 px-3 py-3 text-sm font-medium text-violet-100 transition hover:text-fuchsia-200"
@@ -208,11 +210,11 @@ export default function Home() {
           </p>
           <div className="mt-4 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
             <h2 className="max-w-2xl font-serif text-4xl leading-tight tracking-[-.04em] sm:text-5xl">
-              What happened matters. The way you hold it can, too.
+              From photo to reflection in three steps.
             </h2>
             <p className="max-w-sm text-base leading-7 text-violet-950/65">
-              A small daily practice that leaves room for how things really
-              felt.
+              Capture a moment, put the feeling into words, and keep the memory
+              close.
             </p>
           </div>
           <div className="mt-12 grid gap-px overflow-hidden rounded-3xl border border-violet-200 bg-violet-200 md:grid-cols-3">
@@ -363,7 +365,7 @@ export default function Home() {
         <div className="mx-auto flex max-w-6xl flex-col gap-7 px-5 sm:px-8 md:flex-row md:items-center md:justify-between">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[.16em] text-white/75">
-              Coming soon
+              Now on the App Store
             </p>
             <h2 className="mt-3 font-serif text-4xl tracking-[-.04em] sm:text-5xl">
               Keep the moments that keep you.
@@ -371,9 +373,9 @@ export default function Home() {
           </div>
           <a
             className="inline-flex w-fit items-center gap-2 rounded-full bg-[#21062f] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#3b1968]"
-            href="mailto:support@inkly.app?subject=Inkly%20early%20access"
+            href={APP_STORE_URL}
           >
-            Join the waitlist <ArrowRight className="size-4" />
+            Download on the App Store <ArrowRight className="size-4" />
           </a>
         </div>
       </section>
