@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   },
   description:
     'Capture a real moment. Turn it into a personal reflection. Keep it private—or share it intentionally.',
-  icons: { icon: '/inkly-icon.png' },
+  icons: { icon: '/inkly-favicon.png' },
   openGraph: {
     title: 'Inkly: Daily Vibes',
     description: 'A photo journal for the moment you need to remember.',
