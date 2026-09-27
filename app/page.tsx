@@ -57,7 +57,7 @@ function Wordmark() {
     <Link
       href="/"
       className="group flex items-center gap-2.5"
-      aria-label="Inkly: Daily Vibes home"
+      aria-label="Inkly: AI Photo Quotes home"
     >
       <Image
         src="/inkly-logo.png"
@@ -71,7 +71,7 @@ function Wordmark() {
           Inkly
         </span>
         <span className="block text-[10px] font-semibold uppercase tracking-[.14em] text-fuchsia-200">
-          Daily Vibes
+          AI Photo Quotes
         </span>
       </span>
     </Link>
@@ -146,8 +146,8 @@ export default function Home() {
         <div className="absolute -left-32 top-8 -z-10 size-[30rem] rounded-full bg-[#8d4de8]/25 blur-[110px]" />
         <div>
           <p className="mb-5 flex items-center gap-2 text-xs font-semibold uppercase tracking-[.18em] text-fuchsia-200">
-            <span className="size-1.5 rounded-full bg-[#be55cc]" /> Inkly: Daily
-            Vibes
+            <span className="size-1.5 rounded-full bg-[#be55cc]" /> Inkly: AI
+            Photo Quotes
           </p>
           <h1 className="max-w-xl font-serif text-5xl leading-[.98] tracking-[-.055em] text-white sm:text-6xl lg:text-7xl">
             A photo journal for the moment you need to remember.
