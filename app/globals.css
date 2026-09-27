@@ -1,10 +1,12 @@
 @import "../node_modules/tailwindcss/index.css";
 
-@theme inline { --font-sans: var(--font-sans); --font-serif: var(--font-serif); }
+@font-face { font-family: "Inkly Sans"; src: url("/fonts/dm-sans.woff2") format("woff2"); font-style: normal; font-weight: 100 1000; font-display: swap; }
+@font-face { font-family: "Inkly Serif"; src: url("/fonts/playfair-display.woff2") format("woff2"); font-style: normal; font-weight: 400 900; font-display: swap; }
+@theme inline { --font-sans: "Inkly Sans", Arial, sans-serif; --font-serif: "Inkly Serif", Georgia, serif; }
 
 :root { --background: #130625; --foreground: #fbf8ff; }
 html { scroll-behavior: smooth; }
-body { margin: 0; background: var(--background); color: var(--foreground); font-family: var(--font-sans), Arial, sans-serif; }
+body { margin: 0; background: var(--background); color: var(--foreground); font-family: var(--font-sans); }
 summary::-webkit-details-marker { display: none; }
 ::selection { background: #c779ff; color: #160424; }
 .inkly-gradient { background: linear-gradient(116deg, #e76247 0%, #b94eaa 43%, #7a36dc 75%, #4f28b6 100%); }
