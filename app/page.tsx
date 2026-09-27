@@ -176,8 +176,8 @@ export default function Home() {
           <div className="relative overflow-hidden rounded-[2rem] border border-fuchsia-100/20 bg-[#251047] p-3 shadow-2xl shadow-black/40">
             <div className="relative aspect-[4/5] overflow-hidden rounded-[1.45rem]">
               <Image
-                src="/inkly-app-preview.png"
-                alt="Inkly photo journal app preview"
+                src="/inkly-app-preview.jpg"
+                alt="Woman holding a warm mug by a rain-speckled window with a journal"
                 fill
                 priority
                 sizes="(min-width: 1024px) 500px, 100vw"
