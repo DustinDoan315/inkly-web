@@ -1,9 +1,10 @@
-import { ArrowRight, Heart } from 'lucide-react';
+import { Heart } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { SiteFooter, Wordmark } from '../../page';
+import { InviteHandoff } from './InviteHandoff';
 
-const APP_STORE_URL = 'https://apps.apple.com/us/app/inkly-daily-vibes/id6760991001';
+const SITE_ORIGIN = 'https://inkly-web-taupe.vercel.app';
 
 export default async function InvitePage({
   params,
@@ -12,6 +13,7 @@ export default async function InvitePage({
 }) {
   const { code } = await params;
   const valid = /^[a-z0-9]{6,64}$/i.test(code);
+  const inviteUrl = `${SITE_ORIGIN}/invite/${code.toLowerCase()}`;
 
   return (
     <main className="flex min-h-screen flex-col overflow-hidden bg-[#130625] text-violet-50">
@@ -36,27 +38,7 @@ export default async function InvitePage({
               ? 'Your friend would love to connect with you on Inkly. Open the app to accept their invitation and share the moments that matter.'
               : 'Ask your friend to send you a new Inkly invite link.'}
           </p>
-          <div className="mt-8 flex flex-wrap items-center gap-3">
-            {valid && (
-              <a
-                className="inline-flex items-center gap-2 rounded-full bg-[#b95add] px-5 py-3 text-sm font-semibold text-[#21062f] transition hover:bg-[#cf80ec]"
-                href={`inkly://invite/${code.toLowerCase()}`}
-              >
-                Open in Inkly <ArrowRight className="size-4" />
-              </a>
-            )}
-            <a
-              className="inline-flex items-center gap-2 rounded-full border border-fuchsia-200/30 px-5 py-3 text-sm font-semibold text-violet-50 transition hover:bg-white/10"
-              href={APP_STORE_URL}
-            >
-              Get Inkly on the App Store
-            </a>
-          </div>
-          {valid && (
-            <p className="mt-5 text-sm text-violet-100/55">
-              New to Inkly? Install the app, then open this invite link again.
-            </p>
-          )}
+          {valid && <InviteHandoff code={code} inviteUrl={inviteUrl} />}
         </div>
         <div className="relative mx-auto w-full max-w-[430px]">
           <div className="absolute -right-4 top-12 size-40 rounded-full bg-[#e76247]/30 blur-3xl" />
