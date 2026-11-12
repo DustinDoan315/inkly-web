@@ -1,5 +1,4 @@
 import {
-  ArrowRight,
   Camera,
   Check,
   ChevronRight,
@@ -9,8 +8,7 @@ import {
 } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { DownloadLink } from '@/components/download-link';
-import { APP_STORE_URL, PLAY_STORE_URL } from '@/lib/store-links';
+import { StoreBadge } from '@/components/store-badge';
 
 const steps = [
   {
@@ -134,7 +132,10 @@ export default function Home() {
             FAQ
           </a>
         </nav>
-        <DownloadLink className="shrink-0 rounded-full border border-fuchsia-200/30 bg-[#b95add] px-3 py-2 text-xs font-semibold text-[#21062f] transition hover:bg-[#cf80ec] sm:px-4 sm:text-sm" />
+        <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
+          <StoreBadge store="apple" compact />
+          <StoreBadge store="play" compact variant="ghost" />
+        </div>
       </header>
 
       <section className="relative isolate mx-auto grid max-w-6xl gap-12 px-5 pb-20 pt-14 sm:px-8 lg:grid-cols-[1.02fr_.98fr] lg:items-center lg:pb-28 lg:pt-20">
@@ -152,18 +153,8 @@ export default function Home() {
             private—or share it intentionally.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
-            <a
-              className="inline-flex items-center gap-2 rounded-full bg-[#b95add] px-5 py-3 text-sm font-semibold text-[#21062f] transition hover:bg-[#cf80ec]"
-              href={APP_STORE_URL}
-            >
-              Download on the App Store <ArrowRight className="size-4" />
-            </a>
-            <a
-              className="inline-flex items-center gap-2 rounded-full border border-fuchsia-200/30 px-5 py-3 text-sm font-semibold text-violet-50 transition hover:bg-white/10"
-              href={PLAY_STORE_URL}
-            >
-              Get it on Google Play <ArrowRight className="size-4" />
-            </a>
+            <StoreBadge store="apple" />
+            <StoreBadge store="play" variant="ghost" />
             <a
               className="inline-flex items-center gap-2 px-3 py-3 text-sm font-medium text-violet-100 transition hover:text-fuchsia-200"
               href="#how-it-works"
@@ -373,18 +364,8 @@ export default function Home() {
             </h2>
           </div>
           <div className="flex flex-wrap items-center gap-3">
-            <a
-              className="inline-flex w-fit items-center gap-2 rounded-full bg-[#21062f] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#3b1968]"
-              href={APP_STORE_URL}
-            >
-              Download on the App Store <ArrowRight className="size-4" />
-            </a>
-            <a
-              className="inline-flex w-fit items-center gap-2 rounded-full border border-white/30 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
-              href={PLAY_STORE_URL}
-            >
-              Get it on Google Play <ArrowRight className="size-4" />
-            </a>
+            <StoreBadge store="apple" tone="dark" />
+            <StoreBadge store="play" tone="dark" variant="ghost" />
           </div>
         </div>
       </section>

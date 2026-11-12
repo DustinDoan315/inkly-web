@@ -2,6 +2,7 @@
 
 import { ArrowRight, Check, Copy } from 'lucide-react';
 import { useCallback, useEffect, useState } from 'react';
+import { StoreBadge } from '@/components/store-badge';
 import { APP_STORE_URL, PLAY_STORE_URL } from '@/lib/store-links';
 
 type Props = {
@@ -68,20 +69,16 @@ export function InviteHandoff({ code, inviteUrl }: Props) {
         >
           Open in Inkly <ArrowRight className="size-4" />
         </a>
-        <a
-          className="inline-flex items-center gap-2 rounded-full border border-fuchsia-200/30 px-5 py-3 text-sm font-semibold text-violet-50 transition hover:bg-white/10"
-          href={APP_STORE_URL}
+        <StoreBadge
+          store="apple"
+          variant="ghost"
           onClick={(event) => handleGetApp(event, APP_STORE_URL)}
-        >
-          Get Inkly on the App Store
-        </a>
-        <a
-          className="inline-flex items-center gap-2 rounded-full border border-fuchsia-200/30 px-5 py-3 text-sm font-semibold text-violet-50 transition hover:bg-white/10"
-          href={PLAY_STORE_URL}
+        />
+        <StoreBadge
+          store="play"
+          variant="ghost"
           onClick={(event) => handleGetApp(event, PLAY_STORE_URL)}
-        >
-          Get it on Google Play
-        </a>
+        />
       </div>
 
       <div className="mt-6 rounded-2xl border border-fuchsia-100/15 bg-[#251047]/70 p-5">
