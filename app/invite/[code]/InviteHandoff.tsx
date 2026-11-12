@@ -2,9 +2,7 @@
 
 import { ArrowRight, Check, Copy } from 'lucide-react';
 import { useCallback, useEffect, useState } from 'react';
-
-const APP_STORE_URL =
-  'https://apps.apple.com/us/app/inkly-daily-vibes/id6760991001';
+import { APP_STORE_URL, PLAY_STORE_URL } from '@/lib/store-links';
 
 type Props = {
   code: string;
@@ -48,15 +46,15 @@ export function InviteHandoff({ code, inviteUrl }: Props) {
   }, [inviteUrl]);
 
   /**
-   * Put the invite on the clipboard before leaving for the App Store. The
-   * installed app reads it once on first launch, which is what lets a new
-   * install know who invited them.
+   * Put the invite on the clipboard before leaving for a store. The installed
+   * app reads it once on first launch, which is what lets a new install know
+   * who invited them.
    */
   const handleGetApp = useCallback(
-    async (event: React.MouseEvent<HTMLAnchorElement>) => {
+    async (event: React.MouseEvent<HTMLAnchorElement>, storeUrl: string) => {
       event.preventDefault();
       await writeClipboard(inviteUrl);
-      window.location.href = APP_STORE_URL;
+      window.location.href = storeUrl;
     },
     [inviteUrl],
   );
@@ -73,9 +71,16 @@ export function InviteHandoff({ code, inviteUrl }: Props) {
         <a
           className="inline-flex items-center gap-2 rounded-full border border-fuchsia-200/30 px-5 py-3 text-sm font-semibold text-violet-50 transition hover:bg-white/10"
           href={APP_STORE_URL}
-          onClick={handleGetApp}
+          onClick={(event) => handleGetApp(event, APP_STORE_URL)}
         >
           Get Inkly on the App Store
+        </a>
+        <a
+          className="inline-flex items-center gap-2 rounded-full border border-fuchsia-200/30 px-5 py-3 text-sm font-semibold text-violet-50 transition hover:bg-white/10"
+          href={PLAY_STORE_URL}
+          onClick={(event) => handleGetApp(event, PLAY_STORE_URL)}
+        >
+          Get it on Google Play
         </a>
       </div>
 
@@ -113,9 +118,10 @@ export function InviteHandoff({ code, inviteUrl }: Props) {
           </button>
         </div>
         <p className="mt-4 text-sm leading-6 text-violet-100/55">
-          New to Inkly? Tap <span className="text-violet-50">Get Inkly</span> and
-          the invite is carried over automatically after you install. You can
-          also enter the code above in the app under Friends.
+          New to Inkly? Tap <span className="text-violet-50">App Store</span> or{' '}
+          <span className="text-violet-50">Google Play</span> and the invite is
+          carried over automatically after you install. You can also enter the
+          code above in the app under Friends.
         </p>
       </div>
     </>

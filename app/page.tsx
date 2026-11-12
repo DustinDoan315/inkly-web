@@ -9,8 +9,8 @@ import {
 } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-
-const APP_STORE_URL = 'https://apps.apple.com/us/app/inkly-daily-vibes/id6760991001';
+import { DownloadLink } from '@/components/download-link';
+import { APP_STORE_URL, PLAY_STORE_URL } from '@/lib/store-links';
 
 const steps = [
   {
@@ -134,12 +134,7 @@ export default function Home() {
             FAQ
           </a>
         </nav>
-        <a
-          className="shrink-0 rounded-full border border-fuchsia-200/30 bg-[#b95add] px-3 py-2 text-xs font-semibold text-[#21062f] transition hover:bg-[#cf80ec] sm:px-4 sm:text-sm"
-          href={APP_STORE_URL}
-        >
-          Download on the App Store
-        </a>
+        <DownloadLink className="shrink-0 rounded-full border border-fuchsia-200/30 bg-[#b95add] px-3 py-2 text-xs font-semibold text-[#21062f] transition hover:bg-[#cf80ec] sm:px-4 sm:text-sm" />
       </header>
 
       <section className="relative isolate mx-auto grid max-w-6xl gap-12 px-5 pb-20 pt-14 sm:px-8 lg:grid-cols-[1.02fr_.98fr] lg:items-center lg:pb-28 lg:pt-20">
@@ -162,6 +157,12 @@ export default function Home() {
               href={APP_STORE_URL}
             >
               Download on the App Store <ArrowRight className="size-4" />
+            </a>
+            <a
+              className="inline-flex items-center gap-2 rounded-full border border-fuchsia-200/30 px-5 py-3 text-sm font-semibold text-violet-50 transition hover:bg-white/10"
+              href={PLAY_STORE_URL}
+            >
+              Get it on Google Play <ArrowRight className="size-4" />
             </a>
             <a
               className="inline-flex items-center gap-2 px-3 py-3 text-sm font-medium text-violet-100 transition hover:text-fuchsia-200"
@@ -365,18 +366,26 @@ export default function Home() {
         <div className="mx-auto flex max-w-6xl flex-col gap-7 px-5 sm:px-8 md:flex-row md:items-center md:justify-between">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[.16em] text-white/75">
-              Now on the App Store
+              Now on the App Store and Google Play
             </p>
             <h2 className="mt-3 font-serif text-4xl tracking-[-.04em] sm:text-5xl">
               Keep the moments that keep you.
             </h2>
           </div>
-          <a
-            className="inline-flex w-fit items-center gap-2 rounded-full bg-[#21062f] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#3b1968]"
-            href={APP_STORE_URL}
-          >
-            Download on the App Store <ArrowRight className="size-4" />
-          </a>
+          <div className="flex flex-wrap items-center gap-3">
+            <a
+              className="inline-flex w-fit items-center gap-2 rounded-full bg-[#21062f] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#3b1968]"
+              href={APP_STORE_URL}
+            >
+              Download on the App Store <ArrowRight className="size-4" />
+            </a>
+            <a
+              className="inline-flex w-fit items-center gap-2 rounded-full border border-white/30 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+              href={PLAY_STORE_URL}
+            >
+              Get it on Google Play <ArrowRight className="size-4" />
+            </a>
+          </div>
         </div>
       </section>
       <SiteFooter />
